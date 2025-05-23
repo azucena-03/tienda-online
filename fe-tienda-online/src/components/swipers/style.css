@@ -1,0 +1,12 @@
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+}
+.swiper-pagination-bullet {
+  background-color: #9a9caa !important;
+  opacity: 0.7 !important;
+}
+.swiper-pagination-bullet-active {
+  background-color: #232321 !important;
+  opacity: 1 !important;
+}

@@ -22,7 +22,7 @@ const categorias = [
 function MenuNav() {
     const navigate = useNavigate();
     return (
-        <div className="bg-white hidden md:flex justify-between items-center px-4 py-2 rounded-md border p-1 shadow-xs text-[#272343]">
+        <div className="bg-white hidden md:flex justify-between items-center px-4 py-2 border p-1 shadow-xs text-[#272343]">
             <Menubar>
                 <MenubarMenu>
                     <MenubarTrigger>
@@ -51,7 +51,7 @@ function MenuNav() {
                     <MenubarTrigger onClick={() => navigate("/productos")}>Productos</MenubarTrigger>
                 </MenubarMenu>
                 <MenubarMenu>
-                    <MenubarTrigger>Sobre Nosotros</MenubarTrigger>
+                    <MenubarTrigger onClick={() => navigate("/sobre-nosotros")}>Sobre Nosotros</MenubarTrigger>
                 </MenubarMenu>
             </Menubar>
 

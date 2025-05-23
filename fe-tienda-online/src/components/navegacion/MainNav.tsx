@@ -1,9 +1,12 @@
-import { Check, Footprints, Heart, Info, Search, ShoppingCart, User } from "lucide-react";
+import { Check, Heart, Info, Search, ShoppingCart, User } from "lucide-react";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import MenuNav from "./MenuNav";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuShortcut, DropdownMenuTrigger } from "../ui/dropdown-menu";
+import { useNavigate } from "react-router-dom";
 
 export default function MainNav() {
+    const navigate = useNavigate();
     return (
         <>
             <div className="hidden md:block bg-[#272343] py-2.5 text-gray-300 text-[13px]">
@@ -25,11 +28,11 @@ export default function MainNav() {
             <div className="bg-[#F0F2F3] py-5 px-6">
                 <div className="flex container justify-between mx-auto">
                     <div className="flex items-center h-8">
-                        <img src="/logo-icon.png" alt="logo" className="scale-y-65" />
+                        <img src="/logo-icon.png" alt="logo" className="hidden lg:block scale-y-65" />
                         <span className="uppercase font-black text-3xl">shalo</span>
                     </div>
                     <div className="relative w-full max-w-sm hidden md:block">
-                        <Input className="pr-10 bg-white" placeholder="Buscar..." />
+                        <Input className="pr-10 bg-white border-background" placeholder="Buscar..." />
                         <Search className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
                     </div>
                     <div className="flex gap-x-1.5 md:gap-x-3 text-[10px]">
@@ -43,9 +46,25 @@ export default function MainNav() {
                         <Button variant={"outline"}>
                             <Heart />
                         </Button>
-                        <Button variant={"outline"}>
-                            <User />
-                        </Button>
+                        <DropdownMenu>
+                            <DropdownMenuTrigger asChild>
+                                <Button variant={"outline"}>
+                                    <User />
+                                </Button>
+                            </DropdownMenuTrigger>
+                            <DropdownMenuContent className="w-40" align="end">
+                                <DropdownMenuLabel>Cuenta</DropdownMenuLabel>
+                                <DropdownMenuSeparator />
+                                <DropdownMenuGroup>
+                                    <DropdownMenuItem onClick={() => navigate("/inicio-sesion")}>
+                                        Iniciar Sesion
+                                    </DropdownMenuItem>
+                                    <DropdownMenuItem onClick={() => navigate("/nuevo-registro")}>
+                                        Registrarse
+                                    </DropdownMenuItem>
+                                </DropdownMenuGroup>
+                            </DropdownMenuContent>
+                        </DropdownMenu>
                     </div>
                 </div>
             </div>
