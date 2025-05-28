@@ -1,4 +1,4 @@
-import CategoryCard from "@/components/category/CategoryCard"
+import CategoryCard from "@/components/cards/CategoryCard"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
 
 function CategorySection() {

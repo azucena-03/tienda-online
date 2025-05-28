@@ -1,4 +1,4 @@
-import ProductCard from "@/components/Producto/ProductCard"
+import ProductCard from "@/components/cards/ProductCard"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { productos } from "@/utils/data"
 

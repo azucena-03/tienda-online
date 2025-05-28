@@ -6,10 +6,11 @@ import { Input } from "../ui/input";
 import { Slider } from "../ui/slider";
 
 const tallas = Array.from({ length: 10 }, (_, i) => 35 + i);
-const marcas = ["adidas", "nike", "puma"]
+const marcas = ["Adidas", "Nike", "Puma"]
+
 function FiltersPanel() {
     return (
-        <div className="flex flex-col gap-y-6">
+        <div className="flex flex-col gap-y-4 lg:gap-y-6">
             <h2 className="text-xl font-bold">Filtros</h2>
 
             <Input placeholder="Buscar Producto" />
@@ -18,7 +19,7 @@ function FiltersPanel() {
                 <h3 className="font-bold text-sm uppercase mb-4">Marca</h3>
                 <div className="space-x-3">
                     {marcas.map((marca, index) => (
-                        <Button key={index} variant={"base"}>{marca.toUpperCase()}</Button>
+                        <Button key={index} variant={"base"} className="text-xs">{marca}</Button>
                     ))}
                 </div>
             </div>
@@ -60,7 +61,7 @@ function FiltersPanel() {
             </div>
 
             <div className="flex justify-between md:hidden">
-                <Button variant={"outline"} className="w-[48%] uppercase">
+                <Button variant={"outline"} className="w-[48%] uppercase border-primary">
                     Limpiar
                 </Button>
 

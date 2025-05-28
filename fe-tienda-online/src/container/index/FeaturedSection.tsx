@@ -1,4 +1,4 @@
-import ProductCard from "@/components/Producto/ProductCard"
+import ProductCard from "@/components/cards/ProductCard"
 import { Button } from "@/components/ui/button"
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel"
 import { productos } from "@/utils/data"

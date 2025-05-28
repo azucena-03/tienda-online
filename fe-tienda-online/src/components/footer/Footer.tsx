@@ -1,57 +1,43 @@
-import { categorias, redes } from "@/utils/data"
+import { redes } from "@/utils/data"
+import { Separator } from "../ui/separator"
+import { Link } from "react-router-dom"
 
 function Footer() {
     return (
-        <footer className="container mx-auto mb-12 px-4 md:px-0">
-            <div className="bg-[#007580] rounded-3xl lg:rounded-[48px] ">
-                <div className="p-4 md:p-[72px] text-white grid md:grid-cols-2 gap-y-8">
-                    <div className="max-w-[512px]">
-                        <h2 className="text-3xl md:text-5xl font-bold md:uppercase mb-2 lg:pb-4">Lorem ip dolor <br />
-                            Amet adipisicing</h2>
-                        <p className="text-[#E7E7E3] text-sm">Lorem ipsum dolor sit amet Lorem.
-                        </p>
+        <footer className="pt-14">
+            <div className="bg-[url('/hero-slide-2.png')] bg-cover bg-no-repeat bg-[center_-35%] bg-fixed bg-gray-400 bg-blend-multiply h-56 flex justify-center items-center">
+                <span className="text-white italic capitalize font-bold text-center text-2xl text-shadow-lg/20 md:text-3xl lg:text-4xl px-4">"Pasos firmes, estilo único: encuentra tus zapatillas perfectas"</span>
+            </div>
+
+            <div className="p-4 pt-14 pb-8 space-y-6 container mx-auto">
+                <div className="flex flex-col gap-y-6 md:flex-row md:justify-between">
+                    <span className="uppercase font-black text-xl italic">shalo</span>
+
+                    <div className="flex flex-col sm:flex-row gap-x-6 gap-y-2 capitalize text-sm font-semibold">
+                        <Link to="/sobre-nosotros" className="hover:underline">
+                            sobre nosotros
+                        </Link>
+                        <Link to="/productos" className="hover:underline">
+                            productos
+                        </Link>
+                        <Link to="#" className="hover:underline">
+                            Contacto
+                        </Link>
                     </div>
-                    <div className="flex items-center lg:place-self-center">
-                        <img src="/logo-icon.png" alt="logo" className="hidden lg:block" />
-                        <span className="uppercase font-black text-6xl">shalo</span>
+
+                    <div className="flex gap-x-6">
+                        {redes.map(red => (
+                            <a key={red.nombre} href="#" target="_blank">
+                                <img src={red.icono} alt={red.nombre} className="w-6" />
+                            </a>
+                        ))}
                     </div>
                 </div>
-                <div className="bg-[#232321] text-[#E7E7E3] grid lg:grid-cols-5 px-4 py-6 md:p-10 gap-y-10 gap-x-28 rounded-3xl lg:rounded-[48px]">
-                    <div className="lg:col-span-2">
-                        <h3 className="text-[#FFA52F] font-semibold mb-4">Sobre Nosotros</h3>
-                        <p className="text-sm">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat reiciendis mollitia sint, labore at et Lorem ipsum dolor sit amet.</p>
-                    </div>
-                    <div>
-                        <h3 className="text-[#FFA52F] font-semibold mb-4">Categorias</h3>
-                        <div className="flex flex-col">
-                            {categorias.map(categoria => (
-                                <a key={categoria.id} href="#" target="_blank" className="text-sm underline">
-                                    {categoria.nombre}
-                                </a>
-                            ))}
-                        </div>
-                    </div>
-                    <div>
-                        <h3 className="text-[#FFA52F] font-semibold mb-4">Compañia</h3>
-                        <div className="flex flex-col">
-                            <a href="#" target="_blank" className="text-sm underline">
-                                Preguntas Frecuentes
-                            </a>
-                            <a href="#" target="_blank" className="text-sm underline">
-                                Contacto
-                            </a>
-                        </div>
-                    </div>
-                    <div>
-                        <h3 className="text-[#FFA52F] font-semibold mb-4">Siguenos</h3>
-                        <div className="flex gap-x-6">
-                            {redes.map(red => (
-                                <a key={red.nombre} href="#" target="_blank">
-                                    <img src={red.icono} alt={red.nombre} />
-                                </a>
-                            ))}
-                        </div>
-                    </div>
+                <Separator className="bg-primary" />
+                <div className="text-center md:text-end">
+                    <Link to="#" className="text-sm font-semibold hover:underline">
+                        Preguntas Frecuentes
+                    </Link>
                 </div>
             </div>
         </footer >
