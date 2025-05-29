@@ -18,6 +18,10 @@ function MenuNav() {
                 <MenubarMenu>
                     <MenubarTrigger onClick={() => navigate("/productos")}>Hombre</MenubarTrigger>
                 </MenubarMenu>
+                <Separator orientation="vertical" />
+                <MenubarMenu>
+                    <MenubarTrigger onClick={() => navigate("/productos")}>Unisex</MenubarTrigger>
+                </MenubarMenu>
             </Menubar>
 
             <Menubar>

@@ -3,11 +3,66 @@ import ProductCard from "../components/cards/ProductCard"
 import FiltersPanel from "@/components/common/FiltersPanel"
 import AppBreadcrumb from "@/components/common/AppBreadcrumb"
 import { Button } from "@/components/ui/button"
-import { FilterIcon, X } from "lucide-react"
+import { FilterIcon, RefreshCcw, X } from "lucide-react"
 import { useState } from "react"
+import { useFilter } from "@/utils/FilterContext"
 
 function ListPage() {
+    const { searchQuery, setSearchQuery, brand, setBrand, selectedCategory, setSelectedCategory, size, setSize, price, setPrice } = useFilter();
+    const [products] = useState(productos)
     const [open, setOpen] = useState(false);
+
+    const getFilteredProducts = () => {
+        let filteredProducts = products;
+
+        if (searchQuery) {
+            filteredProducts = filteredProducts.filter(product =>
+                product.nombre.toLowerCase().includes(searchQuery.toLowerCase())
+            )
+        }
+
+        if (brand) {
+            filteredProducts = filteredProducts.filter(product =>
+                product.marca.toLowerCase().includes(brand.toLowerCase())
+            )
+        }
+
+        if (selectedCategory) {
+            filteredProducts = filteredProducts.filter(product => {
+                if (selectedCategory === "Todas") {
+                    return true
+                }
+
+                return product.categoria.toLowerCase() === selectedCategory.toLowerCase()
+            })
+        }
+
+        if (size) {
+            filteredProducts = filteredProducts.filter(product =>
+                product.tallas.includes(size)
+            )
+        }
+
+        if (price) {
+            filteredProducts = filteredProducts.filter(product =>
+                product.precio >= price[0] && product.precio <= price[1]
+            )
+        }
+
+        return filteredProducts;
+
+    }
+
+    const filteredProducts = getFilteredProducts()
+
+    const handleResetFilters = () => {
+        setSearchQuery("");
+        setBrand("");
+        setSelectedCategory("");
+        setSize(undefined);
+        setPrice(undefined)
+    };
+
     return (
         <section>
             <AppBreadcrumb />
@@ -19,7 +74,7 @@ function ListPage() {
                         <FilterIcon />
                     </Button>
                     <div className="hidden md:block">
-                        <FiltersPanel />
+                        <FiltersPanel resetFilter={handleResetFilters} />
                     </div>
                 </div>
                 {open && (
@@ -31,14 +86,26 @@ function ListPage() {
                             >
                                 <X />
                             </button>
-                            <FiltersPanel />
+                            <FiltersPanel resetFilter={handleResetFilters} />
                         </div>
                     </div>
                 )}
 
-                {productos.map(producto => (
-                    <ProductCard key={producto.id} producto={producto} />
-                ))}
+                {filteredProducts.length > 0 ?
+                    filteredProducts.map(producto => (
+                        <ProductCard key={producto.id} producto={producto} />
+                    ))
+                    :
+                    <div className="flex flex-col gap-y-4 text-center items-center justify-center sm:col-span-2 lg:col-span-3 md:row-span-2">
+                        <img src="/search-filter.svg" alt="" width={70} />
+                        <h2 className="font-semibold">No encontramos productos que coincidan con tu selección.</h2>
+                        <p className="text-xs text-caption">Ajusta los filtros para descubrir más productos.</p>
+                        <Button className="flex justify-between" onClick={handleResetFilters}>
+                            <span className="capitalize">Reiniciar filtros</span>
+                            <RefreshCcw />
+                        </Button>
+                    </div>
+                }
             </div>
         </section>
     )
