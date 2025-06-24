@@ -1,9 +1,6 @@
 import { formatCurrency } from "@/utils/utils"
-import { Button } from "../ui/button"
 import { Link } from "react-router-dom"
 import CartControls from "../common/CartControls"
-import { useFavorite } from "@/context/FavoriteContext"
-import { HeartFilledIcon, HeartOutlineIcon } from "@/assets"
 import { Product } from "@/types"
 import FavoriteControls from "../common/FavoriteControls"
 

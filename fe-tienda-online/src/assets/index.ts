@@ -7,7 +7,7 @@ import HeartFilledIcon from "./HeartFilledIcon";
 import FacebookIcon from "./FacebookIcon";
 import InstagramIcon from "./InstagramIcon";
 import XIcon from "./XIcon";
-import TiktokIcon from "./TikTokIcon";
+import TiktokIcon from "./TiktokIcon";
 
 export {
   DeliveryTruckIcon,

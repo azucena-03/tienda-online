@@ -1,16 +1,13 @@
-import FeaturedProductCard from "@/components/cards/FeaturedProductCard"
-import ProductCardCompact from "@/components/cards/ProductCardCompact"
-import SectionHeader from "@/components/common/SectionHeader"
-import { productos } from "@/utils/data"
+import FeaturedProductCard from "@/components/cards/FeaturedProductCard";
+import SectionHeader from "@/components/common/SectionHeader";
+import { productos } from "@/utils/data";
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-
-import 'swiper/css';
-import 'swiper/css/pagination';
 
 import '../../components/swipers/style.css';
 
 import { Pagination } from 'swiper/modules';
+import ProductList from "@/components/common/ProductList";
 
 function SellersSection() {
     const topLeftProducts = productos.slice(0, 3)
@@ -41,13 +38,13 @@ function SellersSection() {
                 className="relative pb-2"
             >
                 <SwiperSlide className="space-y-6 sm:w-40 md:w-auto">
-                    {productos.slice(0, 3).map(producto => <ProductCardCompact key={producto.id} producto={producto} />)}
+                    <ProductList products={topLeftProducts} />
                 </SwiperSlide>
                 <SwiperSlide className="h-auto  sm:w-40 md:w-auto">
                     <FeaturedProductCard producto={featuredProduct} />
                 </SwiperSlide>
                 <SwiperSlide className="space-y-6 sm:w-40 md:w-auto" >
-                    {productos.slice(4, 7).map(producto => <ProductCardCompact key={producto.id} producto={producto} />)}
+                    <ProductList products={topRightProducts} />
                 </SwiperSlide>
             </Swiper>
         </section>

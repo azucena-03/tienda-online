@@ -3,9 +3,6 @@ import { productos } from "@/utils/data";
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import 'swiper/css';
-import 'swiper/css/pagination';
-
 import '../../components/swipers/style.css';
 
 import { Pagination } from 'swiper/modules';

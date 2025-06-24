@@ -1,7 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
 @import "tailwindcss";
 @import "tw-animate-css";
@@ -10,7 +6,6 @@
 
 @theme inline {
   --font-body: "JetBrains Mono", monospace;
-  --font-secondary: "JetBrains Mono", monospace;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -54,10 +49,12 @@
   --color-surface: var(--surface);
 
   --color-cerulean-blue-50: oklch(0.9675 0.0124 271.29);
+  --color-cerulean-blue-100: oklch(0.9276 0.0272 267.53);
+  --color-cerulean-blue-200: oklch(0.8706 0.0509 268.1);
   --color-cerulean-blue-500: oklch(0.5794 0.1799 268.35);
   --color-cerulean-blue-600: oklch(0.4976 0.2075 269.32);
+  --color-cerulean-blue-800: oklch(0.3972 0.1701 272.48);
   --color-cerulean-blue-900: oklch(0.3569 0.1305 273.35);
-  --color-cerulean-blue-950: oklch(0.2699 0.0833 276.46);
 }
 
 :root {
@@ -150,7 +147,7 @@
 
 @layer components {
   .img-radial {
-    @apply bg-radial from-gray-100 to-[#D2D2D2] to-60% /*via-50% to-gray-300 to-85%*/;
+    @apply bg-radial from-gray-100 to-[#D2D2D2] to-60%;
   }
   .tab {
     @apply border border-primary whitespace-nowrap rounded-md text-sm font-medium bg-background shadow-xs;
@@ -181,5 +178,8 @@
   }
   .rosa {
     @apply bg-rose-400;
+  }
+  .verde {
+    @apply bg-green-300;
   }
 }

@@ -26,7 +26,7 @@ function FeaturedProductCard({ producto }: FeaturedProductCardProps) {
                 </div>
             </Link>
             <div className="p-4 pt-0">
-                <CartControls key={producto.id} productId={producto.id} variant="default" />
+                <CartControls key={producto.id} productId={producto.id} variant="primary" />
             </div>
             <Button variant={"favorite"} className="absolute top-2 right-2" onClick={() => handleClickFavorite(producto)}>
                 {favoriteExists(producto.id) ? <HeartFilledIcon /> : <HeartOutlineIcon />}

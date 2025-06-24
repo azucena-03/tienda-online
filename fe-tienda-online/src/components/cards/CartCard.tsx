@@ -2,7 +2,7 @@ import { CartItem, useCart } from "@/context/CartContext"
 import { productos } from "@/utils/data"
 import { formatCurrency } from "@/utils/utils"
 import { Button } from "../ui/button"
-import { Heart, Minus, Plus, Trash, X } from "lucide-react"
+import { Minus, Plus, Trash, X } from "lucide-react"
 import { Link } from "react-router-dom"
 import FavoriteControls from "../common/FavoriteControls"
 

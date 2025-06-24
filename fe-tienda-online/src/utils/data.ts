@@ -12,7 +12,7 @@ export const productos: Product[] = [
     valuacion: 3,
     marca: "adidas",
     tallas: [38, 39, 40, 41, 42, 43, 44],
-    colors: ["blanco", "azul"],
+    colors: ["blanco", "azul", "verde"],
     peso: 200,
     paqueteDimensiones: {
       ancho: 15.14,
@@ -51,8 +51,8 @@ export const productos: Product[] = [
       },
     ],
     politicaDevolucion: "No politicas de devolucion",
-    images: ["/ultraboost-4.png", "/ultraboost-5.png", "/ultraboost-6.png"],
-    thumbnail: "/producto1.png",
+    images: ["/ultraboost-4.webp", "/ultraboost-5.webp", "/ultraboost-6.webp"],
+    thumbnail: "/producto1.webp",
   },
   {
     id: 2,
@@ -122,8 +122,8 @@ export const productos: Product[] = [
       },
     ],
     politicaDevolucion: "No politicas de devolucion",
-    images: ["/ultraboost-1.png", "/ultraboost-2.png", "/ultraboost-3.png"],
-    thumbnail: "/producto2.png",
+    images: ["/ultraboost-1.webp", "/ultraboost-2.webp", "/ultraboost-3.webp"],
+    thumbnail: "/producto2.webp",
   },
   {
     id: 3,
@@ -175,8 +175,8 @@ export const productos: Product[] = [
       },
     ],
     politicaDevolucion: "No politicas de devolucion",
-    images: ["/ultraboost-1.png", "/ultraboost-2.png", "/ultraboost-3.png"],
-    thumbnail: "/producto3.png",
+    images: ["/ultraboost-1.webp", "/ultraboost-2.webp", "/ultraboost-3.webp"],
+    thumbnail: "/producto3.webp",
   },
   {
     id: 4,
@@ -228,8 +228,8 @@ export const productos: Product[] = [
       },
     ],
     politicaDevolucion: "No politicas de devolucion",
-    images: ["/ultraboost-1.png", "/ultraboost-2.png", "/ultraboost-3.png"],
-    thumbnail: "/producto4.png",
+    images: ["/ultraboost-1.webp", "/ultraboost-2.webp", "/ultraboost-3.webp"],
+    thumbnail: "/producto4.webp",
   },
   {
     id: 5,
@@ -270,8 +270,8 @@ export const productos: Product[] = [
       },
     ],
     politicaDevolucion: "Devolución en 30 días con etiqueta prepagada",
-    images: ["/ultraboost-1.png", "/ultraboost-2.png", "/ultraboost-3.png"],
-    thumbnail: "/producto5.png",
+    images: ["/ultraboost-1.webp", "/ultraboost-2.webp", "/ultraboost-3.webp"],
+    thumbnail: "/producto5.webp",
   },
   {
     id: 6,
@@ -312,8 +312,8 @@ export const productos: Product[] = [
       },
     ],
     politicaDevolucion: "Devolución en 15 días sin costo",
-    images: ["/ultraboost-1.png", "/ultraboost-2.png", "/ultraboost-3.png"],
-    thumbnail: "/producto6.png",
+    images: ["/ultraboost-1.webp", "/ultraboost-2.webp", "/ultraboost-3.webp"],
+    thumbnail: "/producto6.webp",
   },
   {
     id: 7,
@@ -354,8 +354,8 @@ export const productos: Product[] = [
       },
     ],
     politicaDevolucion: "Devolución en 30 días con etiqueta prepagada",
-    images: ["/ultraboost-1.png", "/ultraboost-2.png", "/ultraboost-3.png"],
-    thumbnail: "/producto7.png",
+    images: ["/ultraboost-1.webp", "/ultraboost-2.webp", "/ultraboost-3.webp"],
+    thumbnail: "/producto7.webp",
   },
   {
     id: 8,
@@ -407,8 +407,8 @@ export const productos: Product[] = [
       },
     ],
     politicaDevolucion: "No políticas de devolución",
-    images: ["/ultraboost-1.png", "/ultraboost-2.png", "/ultraboost-3.png"],
-    thumbnail: "/producto8.png",
+    images: ["/ultraboost-1.webp", "/ultraboost-2.webp", "/ultraboost-3.webp"],
+    thumbnail: "/producto8.webp",
   },
   {
     id: 9,
@@ -449,8 +449,8 @@ export const productos: Product[] = [
       },
     ],
     politicaDevolucion: "Devolución en 15 días sin costo",
-    images: ["/ultraboost-1.png", "/ultraboost-2.png", "/ultraboost-3.png"],
-    thumbnail: "/producto9.png",
+    images: ["/ultraboost-1.webp", "/ultraboost-2.webp", "/ultraboost-3.webp"],
+    thumbnail: "/producto9.webp",
   },
   {
     id: 10,
@@ -491,8 +491,8 @@ export const productos: Product[] = [
       },
     ],
     politicaDevolucion: "Devolución en 30 días con etiqueta prepagada",
-    images: ["/ultraboost-1.png", "/ultraboost-2.png", "/ultraboost-3.png"],
-    thumbnail: "/producto10.png",
+    images: ["/ultraboost-1.webp", "/ultraboost-2.webp", "/ultraboost-3.webp"],
+    thumbnail: "/producto10.webp",
   },
 ];
 

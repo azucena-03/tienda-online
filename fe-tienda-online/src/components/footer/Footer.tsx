@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 function Footer() {
     return (
         <footer className="mt-14 bg-card">
-            <div className="bg-[url('/hero-slide-2.png')] bg-cover bg-no-repeat bg-[center_-35%] bg-fixed bg-gray-400 bg-blend-multiply h-56 flex justify-center items-center">
+            <div className="bg-[url('/footer.webp')] bg-cover bg-no-repeat bg-[center_-35%] bg-fixed bg-gray-400 bg-blend-multiply h-56 flex justify-center items-center">
                 <span className="text-white italic capitalize font-bold text-center text-2xl text-shadow-lg/20 md:text-3xl lg:text-4xl px-4">"Pasos firmes, estilo único: encuentra tus zapatillas perfectas"</span>
             </div>
 

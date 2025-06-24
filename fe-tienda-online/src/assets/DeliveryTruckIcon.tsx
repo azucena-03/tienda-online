@@ -3,7 +3,7 @@ const DeliveryTruckIcon = () => (
         viewBox="0 0 64 64"
         fill="currentColor"
         xmlns="http://www.w3.org/2000/svg"
-        className="fill-caption w-1/3"
+        className="fill-caption w-14"
     >
         <g>
             <path d="M17.03 44.12a3.175 3.175 0 1 0 3.18 3.17 3.18 3.18 0 0 0-3.18-3.17Zm0 4.35a1.175 1.175 0 1 1 1.18-1.18 1.176 1.176 0 0 1-1.18 1.18Z" />

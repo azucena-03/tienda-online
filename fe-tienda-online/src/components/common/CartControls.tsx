@@ -13,7 +13,7 @@ function CartControls({ productId, variant }: CartControlsProps) {
     return (
         <>
             {quantity === 0 ?
-                (<Button variant={variant} className={`${variant === "base" ? "w-10/12" : "w-full"} tracking-wide ${variant === "default" ? "bg-brand text-primary" : ""} `} onClick={() => increaseCartQuantity(productId)}>
+                (<Button variant={variant} className={`${variant === "base" ? "w-10/12" : "w-full"} tracking-wide ${variant === "default" ? "bg-brand text-primary hover:bg-cerulean-blue-500" : ""} `} onClick={() => increaseCartQuantity(productId)}>
                     Agregar al carrito
                 </Button>) :
                 (

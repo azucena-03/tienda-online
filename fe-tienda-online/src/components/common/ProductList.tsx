@@ -1,9 +1,11 @@
+import { Product } from "@/types"
+import ProductCardCompact from "../cards/ProductCardCompact"
 
-function ProductList() {
+function ProductList({ products }: { products: Product[] }) {
     return (
-        <div>
-
-        </div>
+        <>
+            {products.map(product => <ProductCardCompact key={product.id} producto={product} />)}
+        </>
     )
 }
 

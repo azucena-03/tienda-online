@@ -1,5 +1,4 @@
-import { Heart, Search, ShoppingCart } from "lucide-react";
-import { Input } from "../ui/input";
+import { Heart, ShoppingCart } from "lucide-react";
 import { Button } from "../ui/button";
 import MenuNav from "./MenuNav";
 import { Link } from "react-router-dom";

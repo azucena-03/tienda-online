@@ -23,7 +23,6 @@ const buttonVariants = cva(
           "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 hover:cursor-pointer",
         link: "text-primary underline-offset-4 hover:underline hover:cursor-pointer",
         base: "bg-brand text-[#f3f5f8] rounded-2xl hover:bg-cerulean-blue-500 hover:cursor-pointer",
-        outlineCustom: "border border-brand bg-background shadow-xs hover:bg-cerulean-blue-50 hover:cursor-pointer hover:text-brand dark:bg-background dark:border-brand dark:hover:bg-input/50",
         favorite: "text-background hover:cursor-pointer",
         danger: "hover:bg-accent hover:text-danger dark:hover:bg-accent/50"
       },

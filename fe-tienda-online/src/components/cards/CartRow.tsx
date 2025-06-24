@@ -2,7 +2,7 @@ import { CartItem, useCart } from "@/context/CartContext"
 import { productos } from "@/utils/data"
 import { formatCurrency } from "@/utils/utils"
 import { Button } from "../ui/button"
-import { Heart, Minus, Plus, Trash, X } from "lucide-react"
+import { X } from "lucide-react"
 import { TableCell, TableRow } from "../ui/table"
 import { Link } from "react-router-dom"
 import CartControls from "../common/CartControls"
@@ -12,7 +12,7 @@ type CartRowProps = {
     cart: CartItem
 }
 function CartRow({ cart }: CartRowProps) {
-    const { getItemQuantity, increaseCartQuantity, decreaseCartQuantity, removeFromCart } = useCart()
+    const { getItemQuantity, removeFromCart } = useCart()
     const product = productos.find(product => product.id === cart.id)
     const quantity = getItemQuantity(product!.id);
     if (product == null) return null

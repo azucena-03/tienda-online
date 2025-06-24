@@ -1,6 +1,6 @@
 import { Menu } from "lucide-react"
 import { Button } from "../ui/button"
-import { Sheet, SheetClose, SheetContent, SheetFooter, SheetHeader, SheetTitle, SheetTrigger } from "../ui/sheet"
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "../ui/sheet"
 import { useState } from "react"
 import { Link } from "react-router-dom"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion"
