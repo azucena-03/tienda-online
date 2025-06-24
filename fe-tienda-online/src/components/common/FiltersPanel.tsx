@@ -4,7 +4,7 @@ import { Label } from "../ui/label";
 import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
 import { Input } from "../ui/input";
 import { Slider } from "../ui/slider";
-import { useFilter } from "@/utils/FilterContext";
+import { useFilter } from "@/context/FilterContext";
 import { useState } from "react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 import { Separator } from "../ui/separator";
@@ -39,12 +39,12 @@ function FiltersPanel({ resetFilter }: { resetFilter: () => void }) {
             <h2 className="text-xl font-bold">Filtros</h2>
 
             <div>
-                <Input placeholder="Buscar Producto" value={searchQuery} onChange={e => setSearchQuery(e.target.value)} />
+                <Input placeholder="Buscar Producto" value={searchQuery} onChange={e => setSearchQuery(e.target.value)} className="bg-background border-input" />
                 <Accordion type="multiple" className="w-full">
                     <AccordionItem value="item-1">
                         <AccordionTrigger className="font-bold uppercase">Marca</AccordionTrigger>
                         <AccordionContent>
-                            <div className="space-x-3">
+                            <div className="space-x-3 space-y-3">
                                 {brands.map((brand, index) => (
                                     <Button key={index} variant={"base"} className="text-xs" onClick={() => handleBrandClick(brand)} >{brand}</Button>
                                 ))}

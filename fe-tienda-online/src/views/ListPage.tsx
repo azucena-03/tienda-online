@@ -5,7 +5,7 @@ import AppBreadcrumb from "@/components/common/AppBreadcrumb"
 import { Button } from "@/components/ui/button"
 import { FilterIcon, RefreshCcw, X } from "lucide-react"
 import { useState } from "react"
-import { useFilter } from "@/utils/FilterContext"
+import { useFilter } from "@/context/FilterContext"
 
 function ListPage() {
     const { searchQuery, setSearchQuery, brand, setBrand, selectedCategory, setSelectedCategory, size, setSize, price, setPrice } = useFilter();
@@ -79,7 +79,7 @@ function ListPage() {
                 </div>
                 {open && (
                     <div className="fixed inset-0 z-40 flex md:hidden">
-                        <div className="bg-white w-full h-full p-4 overflow-auto relative">
+                        <div className="bg-background w-full h-full p-4 overflow-auto relative">
                             <button
                                 className="mb-4 text-primary absolute right-3"
                                 onClick={() => setOpen(false)}

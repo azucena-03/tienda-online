@@ -12,7 +12,7 @@ function SingupPage() {
         <section>
             <AppBreadcrumb />
             <div className="grid sm:place-items-center">
-                <div className="flex flex-col gap-y-5 col-span-2 sm:border sm:shadow-sm sm:rounded-md sm:px-4 sm:py-6 md:w-7/12">
+                <div className="flex flex-col gap-y-5 col-span-2 sm:border sm:shadow-sm sm:rounded-md sm:px-4 sm:py-6 md:w-7/12 bg-background">
                     <div className="sm:text-center">
                         <h1 className="text-xl font-bold">Crea tu cuenta</h1>
                         <span className="text-xs text-caption">Completa tu perfil para comenzar</span>

@@ -9,7 +9,7 @@ function LoginPage() {
         <section>
             <AppBreadcrumb />
             <div className="grid sm:place-items-center">
-                <div className="flex flex-col gap-y-5 sm:border sm:px-4 sm:py-6 rounded-md shadow-xs md:w-5/12">
+                <div className="flex flex-col gap-y-5 sm:border sm:px-4 sm:py-6 rounded-md shadow-xs md:w-5/12 bg-background">
                     <div className="sm:text-center">
                         <h1 className="text-xl font-bold mb-2 leading-1">Iniciar Sesión</h1>
                         <span className="text-xs text-caption">Accede a tu cuenta para continuar</span>

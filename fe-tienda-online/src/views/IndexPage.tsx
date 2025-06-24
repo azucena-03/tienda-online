@@ -1,10 +1,9 @@
-
 import AdvantagesSection from "@/container/index/AdvantagesSection"
-import CategorySection from "@/container/index/CategorySection"
 import FeaturedSection from "@/container/index/FeaturedSection"
 import HeroSection from "@/container/index/Hero"
-import PoductsSection from "@/container/index/PoductsSection"
-import TestimonialSection from "@/container/aboutus/TestimonialSection"
+import NewSection from "@/container/index/NewSection"
+import PromoBanner from "@/container/index/PromoBanner"
+import SellersSection from "@/container/index/SellersSection"
 
 
 function IndexPage() {
@@ -12,10 +11,10 @@ function IndexPage() {
         <>
             <HeroSection />
             <AdvantagesSection />
+            <NewSection />
+            <SellersSection />
+            <PromoBanner />
             <FeaturedSection />
-            <CategorySection />
-            <PoductsSection />
-            <TestimonialSection />
         </>
     )
 }

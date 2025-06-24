@@ -1,37 +1,45 @@
-import { ChevronsUpDown, Menu } from "lucide-react"
+import { Menu } from "lucide-react"
 import { Button } from "../ui/button"
-import { Sheet, SheetClose, SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetTitle, SheetTrigger } from "../ui/sheet"
+import { Sheet, SheetClose, SheetContent, SheetFooter, SheetHeader, SheetTitle, SheetTrigger } from "../ui/sheet"
 import { useState } from "react"
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "../ui/collapsible"
-
-const categorias = [
-    {
-        value: "urbano",
-        label: "Urbano",
-    },
-    {
-        value: "clasicas",
-        label: "Clasicas",
-    }
-]
-
+import { Link } from "react-router-dom"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion"
+import { Separator } from "../ui/separator"
 
 function MobileNav() {
-    const [isOpen, setIsOpen] = useState(false)
+    const [open, setOpen] = useState(false);
     return (
-        <div className="px-4 py-2 border p-1 shadow-xs text-[#272343] md:hidden">
-            <Sheet>
+        <div className="md:hidden">
+            <Sheet open={open} onOpenChange={setOpen}>
                 <SheetTrigger asChild>
                     <Button variant="outline">
                         <Menu />
                     </Button>
                 </SheetTrigger>
-                <SheetContent side={"left"}>
+                <SheetContent side={"left"} className="text-lg font-light">
                     <SheetHeader>
                         <SheetTitle>Menú</SheetTitle>
                     </SheetHeader>
-                    <div className="grid gap-4 py-4 place-content-center">
-                        <Collapsible
+                    <div className="px-4 space-y-4">
+                        <ul className="flex flex-col gap-4 mb-12">
+                            <Link to="/productos/" onClick={() => setOpen(false)}>Mujer</Link>
+                            <Link to="/productos/" onClick={() => setOpen(false)}>Hombre</Link>
+                            <Link to="/productos/" onClick={() => setOpen(false)}>Unisex</Link>
+                            <Link to="/sobre-nosotros" onClick={() => setOpen(false)}>Sobre Nosotros</Link>
+                        </ul>
+                        <Separator className="" />
+                        <Accordion type="single" collapsible>
+                            <AccordionItem value="item-1">
+                                <AccordionTrigger className="text-lg hover:no-underline">Acceso</AccordionTrigger>
+                                <AccordionContent>
+                                    <ul className="flex flex-col gap-4">
+                                        <Link to="/inicio-sesion" onClick={() => setOpen(false)}>Iniciar Sesion</Link>
+                                        <Link to="/nuevo-registro" onClick={() => setOpen(false)}>Registrarse</Link>
+                                    </ul>
+                                </AccordionContent>
+                            </AccordionItem>
+                        </Accordion>
+                        {/* <Collapsible
                             open={isOpen}
                             onOpenChange={setIsOpen}
                             className="w-full space-y-2"
@@ -54,13 +62,8 @@ function MobileNav() {
                                     </div>
                                 ))}
                             </CollapsibleContent>
-                        </Collapsible>
+                        </Collapsible> */}
                     </div>
-                    <SheetFooter>
-                        <SheetClose asChild>
-
-                        </SheetClose>
-                    </SheetFooter>
                 </SheetContent>
             </Sheet>
         </div>

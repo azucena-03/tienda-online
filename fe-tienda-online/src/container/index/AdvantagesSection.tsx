@@ -1,37 +1,38 @@
-import { CircleHelp, HandHelping, Package, Truck } from "lucide-react"
+import { DeliveryTruckIcon, DiscountPromoIcon, MoneyCashIcon, QualityCertificateIcon } from "@/assets"
+
 
 function AdvantagesSection() {
     return (
-        <div className="flex justify-between px-[70px] py-12 rounded-md shadow-sm mb-8 bg-white">
-            <div className="flex items-center gap-x-4">
-                <Package size={46} absoluteStrokeWidth={true} strokeWidth={1} />
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-6 lg:gap-x-9 p-4 mb-4 mt-5 bg-card rounded-lg">
+            <div className="flex items-end gap-x-4">
+                <MoneyCashIcon />
                 <div>
-                    <span className="font-medium">Lorem, ipsum</span>
-                    <p className="text-xs text-[#9A9CAA]">Lorem ipsum dolor sit</p>
+                    <span className="font-medium text-xs sm:text-sm tracking-tight line-clamp-2 capitalize">Pago seguro y fácil</span>
+                    <p className="text-xs/relaxed font-light text-caption -tracking-[0.32px] pb-6 hidden sm:block">Compra tus zapatillas con pago rápido y seguro </p>
                 </div>
             </div>
 
-            <div className="flex items-center gap-x-4">
-                <Truck size={46} absoluteStrokeWidth={true} strokeWidth={1} />
+            <div className="flex items-end gap-x-4">
+                <DiscountPromoIcon />
                 <div>
-                    <span className="font-medium">Lorem, ipsum</span>
-                    <p className="text-xs text-[#9A9CAA]">Lorem ipsum dolor sit</p>
+                    <span className="font-medium  text-xs sm:text-sm tracking-tight line-clamp-2 capitalize">Novedades y ofertas</span>
+                    <p className="text-xs/relaxed font-light text-caption -tracking-[0.32px] pb-6 hidden sm:block">Últimas zapatillas y ofertas exclusivas para ti.</p>
                 </div>
             </div>
 
-            <div className="flex items-center gap-x-4">
-                <HandHelping size={46} absoluteStrokeWidth={true} strokeWidth={1} />
+            <div className="flex items-end gap-x-4">
+                <QualityCertificateIcon />
                 <div>
-                    <span className="font-medium">Lorem, ipsum</span>
-                    <p className="text-xs text-[#9A9CAA]">Lorem ipsum dolor sit</p>
+                    <span className="font-medium text-xs sm:text-sm tracking-tight line-clamp-2 capitalize">Garantía de calidad</span>
+                    <p className="text-xs/relaxed font-light text-caption -tracking-[0.32px] pb-6 hidden sm:block">Zapatillas de calidad garantizada en cada par.</p>
                 </div>
             </div>
 
-            <div className="flex items-center gap-x-4">
-                <CircleHelp size={46} absoluteStrokeWidth={true} strokeWidth={1} />
+            <div className="flex items-end gap-x-4">
+                <DeliveryTruckIcon />
                 <div>
-                    <span className="font-medium">Lorem, ipsum</span>
-                    <p className="text-xs text-[#9A9CAA]">Lorem ipsum dolor sit</p>
+                    <span className="font-medium text-xs sm:text-sm tracking-tight line-clamp-2 capitalize">Entrega confiable</span>
+                    <p className="text-xs/relaxed font-light text-caption -tracking-[0.32px] pb-6 hidden sm:block">Recibe tus zapatillas rápido y sin complicaciones.</p>
                 </div>
             </div>
         </div>

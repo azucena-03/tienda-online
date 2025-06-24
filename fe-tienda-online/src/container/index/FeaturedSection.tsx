@@ -1,31 +1,49 @@
-import ProductCard from "@/components/cards/ProductCard"
-import { Button } from "@/components/ui/button"
-import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel"
-import { productos } from "@/utils/data"
+import ProductCard from "@/components/cards/ProductCard";
+import { productos } from "@/utils/data";
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+import 'swiper/css';
+import 'swiper/css/pagination';
+
+import '../../components/swipers/style.css';
+
+import { Pagination } from 'swiper/modules';
+import SectionHeader from "@/components/common/SectionHeader";
+
 
 function FeaturedSection() {
     return (
-        <section className="w-full px-4 md:px-0 pb-20">
-            <div className="flex justify-between mb-8">
-                <h2 className="text-7xl font-bold leading-[110%] uppercase">
-                    Favoritos de la<br /> temporada
-                </h2>
-                <Button variant={"base"} className="uppercase self-end">
-                    Lorem ipsum dolor
-                </Button>
-            </div>
-            <Carousel
-                opts={{ align: "start" }}
-                className="w-full"
+        <section className="w-full md:px-0 pb-4 featured">
+            <SectionHeader title="Favoritos de la temporada" icon="📍" />
+
+            <Swiper
+                pagination={{
+                    clickable: true,
+                }}
+                slidesPerView={'auto'}
+                modules={[Pagination]}
+                spaceBetween={16}
+                grabCursor={true}
+                breakpoints={{
+                    640: {
+                        slidesPerView: 2,
+                    },
+                    768: {
+                        slidesPerView: 3,
+                    },
+                    1024: {
+                        slidesPerView: 4,
+                    },
+                }}
+                className="relative pb-2"
             >
-                <CarouselContent className="">
-                    {productos.map(producto => (
-                        <CarouselItem key={producto.id} className="md:basis-1/2 lg:basis-1/4">
-                            <ProductCard producto={producto} />
-                        </CarouselItem>
-                    ))}
-                </CarouselContent>
-            </Carousel>
+                {productos.slice(0, 4).map(producto => (
+                    <SwiperSlide>
+                        <ProductCard producto={producto} />
+                    </SwiperSlide>
+                ))}
+            </Swiper>
         </section>
     )
 }

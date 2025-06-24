@@ -1,12 +1,12 @@
 import Footer from "@/components/footer/Footer"
-import Header from "@/components/navigation/Header"
+import MainNav from "@/components/navigation/MainNav"
 import { Outlet } from "react-router-dom"
 
 function Layout() {
     return (
         <>
-            <Header />
-            <main className="container mx-auto px-4 lg:px-[3.75rem]">
+            <MainNav />
+            <main className="container lg:max-w-[75rem] mx-auto px-4">
                 <Outlet />
             </main>
             <Footer />

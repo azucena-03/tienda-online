@@ -2,34 +2,43 @@ import { Heart, Search, ShoppingCart } from "lucide-react";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import MenuNav from "./MenuNav";
+import { Link } from "react-router-dom";
+import { useCart } from "@/context/CartContext";
+import MobileNav from "./MobileNav";
+import SearchProduct from "./SearchProduct";
 
 export default function MainNav() {
+    const { cartQuantity } = useCart()
     return (
-        <>
-            <nav className="border-b">
+        <header>
+            <nav className="border-b bg-background">
                 <MenuNav />
             </nav>
 
-            <div className="bg-white py-5 px-4 shadow-sm">
-                <div className="flex container justify-between mx-auto">
-                    <span className="uppercase font-black text-3xl italic">shalo<span className="text-[#FFA52F] lowercase">.com</span></span>
+            <div className="bg-background shadow-sm">
+                <div className="flex container max-w-[76rem] justify-between items-center mx-auto py-4 px-4">
+                    <span className="uppercase font-black text-2xl md:text-3xl italic">shalo<span className="text-brand-accent lowercase">.com</span></span>
                     <div className="relative w-full max-w-sm hidden md:block">
-                        <Input className="pr-10 border-input" placeholder="Buscar..." />
-                        <Search className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+                        <SearchProduct />
                     </div>
                     <div className="flex gap-x-1.5 md:gap-x-3 text-xs">
-                        <Button variant={"outline"}>
-                            <ShoppingCart />
-                            <div className="md:flex justify-center items-center w-5 h-5 bg-[#007580] rounded-full hidden">
-                                <p className="text-white font-medium">0</p>
-                            </div>
+                        <Link to={"/carrito"}>
+                            <Button variant={"outline"}>
+                                <ShoppingCart />
+                                <div className="md:flex justify-center items-center w-5 h-5 bg-brand rounded-full hidden">
+                                    <p className="text-primary font-medium">{cartQuantity}</p>
+                                </div>
+                            </Button>
+                        </Link>
+                        <Button variant={"outline"} >
+                            <Link to="/favoritos">
+                                <Heart />
+                            </Link>
                         </Button>
-                        <Button variant={"outline"}>
-                            <Heart />
-                        </Button>
+                        <MobileNav />
                     </div>
                 </div>
             </div>
-        </>
+        </header>
     )
 }
