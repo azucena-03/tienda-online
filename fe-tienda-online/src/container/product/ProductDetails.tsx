@@ -8,6 +8,8 @@ import { Separator } from "@/components/ui/separator";
 import { useFavorite } from "@/context/FavoriteContext";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 import FavoriteControls from "@/components/common/FavoriteControls";
+import { useCart } from "@/context/CartContext";
+import { useNavigate } from "react-router-dom";
 
 type ProductDetailsProps = {
     productId: string | undefined
@@ -15,7 +17,14 @@ type ProductDetailsProps = {
 
 function ProductDetails({ productId }: ProductDetailsProps) {
     const { favoriteExists } = useFavorite()
+    const { increaseCartQuantity } = useCart()
+    const navigate = useNavigate()
     const product = productos.find(p => p.id === Number(productId));
+
+    const handleAddToCartAndRedirect = () => {
+        increaseCartQuantity(product!.id)
+        navigate("/carrito")
+    }
 
     return (
         <div className="mb-6">
@@ -57,9 +66,10 @@ function ProductDetails({ productId }: ProductDetailsProps) {
                         <SizeChartDialog />
                     </div>
 
+                    <Button className="w-full" onClick={handleAddToCartAndRedirect}>Comprar ahora</Button>
+
                     <div className="flex justify-between items-center gap-x-2">
                         <CartControls productId={product!.id} variant="base" />
-
                         <HoverCard>
                             <HoverCardTrigger className="w-2/12">
                                 <FavoriteControls product={product!} variant="primary" />
@@ -69,6 +79,7 @@ function ProductDetails({ productId }: ProductDetailsProps) {
                             </HoverCardContent>
                         </HoverCard>
                     </div>
+
                 </div>
             </div>
             <div className="text-xs text-caption font-light space-y-2">

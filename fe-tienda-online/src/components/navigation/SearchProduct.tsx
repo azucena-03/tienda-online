@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "../ui/command";
 import { productos } from "@/utils/data";
 import { Product } from "@/types";
@@ -21,6 +21,7 @@ const SearchProductCard = ({ name, image, brand }: SearchProductCardProps) => (
 )
 
 function SearchProduct() {
+    const selectRef = useRef<HTMLInputElement>(null);
     const [query, setQuery] = useState("");
 
     const productosFiltrados = query
@@ -29,14 +30,31 @@ function SearchProduct() {
         )
         : [];
 
+    useEffect(() => {
+        function handleClickOutside(event: MouseEvent) {
+            if (selectRef.current && !selectRef.current.contains(event.target as Node)) {
+                setQuery("")
+            }
+        }
+
+        document.addEventListener('mousedown', handleClickOutside);
+
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, []);
+
     return (
         <Command className="bg-neutral-700 rounded-xs">
+
             <CommandInput
                 placeholder="Buscar producto..."
                 value={query}
                 onValueChange={(value) => setQuery(value)}
                 autoComplete="off"
+                ref={selectRef}
             />
+
             {query && (
                 <CommandList className="absolute top-10 z-50 bg-neutral-700 w-full">
                     {productosFiltrados.length > 0 ? (

@@ -45,7 +45,7 @@ function SizeChartDialog() {
                     </Table>
                     <div className="space-y-4">
                         <h2>¿Cómo medir?</h2>
-                        <img src="/foot.jpg" alt="foot" className="rounded-xs" />
+                        <img src="/foot.webp" alt="foot" className="rounded-xs" />
                         <p className="text-xs text-center">Mide el largo del pie desde el talón hasta la punta y luego ajusta según la tabla de tallas indicada arriba.</p>
                     </div>
                 </div>

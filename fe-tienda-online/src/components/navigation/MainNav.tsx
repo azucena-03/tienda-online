@@ -15,7 +15,7 @@ export default function MainNav() {
             </nav>
 
             <div className="bg-background shadow-sm">
-                <div className="flex container max-w-[76rem] justify-between items-center mx-auto py-4 px-4">
+                <div className="flex container max-w-[76rem] justify-between items-center mx-auto py-4 px-4 ">
                     <span className="uppercase font-black text-2xl md:text-3xl italic">shalo<span className="text-brand-accent lowercase">.com</span></span>
                     <div className="relative w-full max-w-sm hidden md:block">
                         <SearchProduct />

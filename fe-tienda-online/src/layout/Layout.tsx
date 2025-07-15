@@ -6,7 +6,6 @@ function Layout() {
     return (
         <>
             <MainNav />
-
             <main className="container lg:max-w-[75rem] mx-auto px-4 overflow-hidden">
                 <Outlet />
             </main>
